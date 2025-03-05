@@ -64,6 +64,14 @@ all_df = pd.read_csv("all_data.csv")
 min_date = all_df["order_purchase_timestamp"].min()
 max_date = all_df["order_purchase_timestamp"].max()
 
+if isinstance(min_date, pd.Timestamp):
+    min_time = min_date.time()
+elif isinstance(min_date, datetime.datetime):
+    min_time = min_date.time()
+else:
+    # Handle other cases or raise an error
+    raise TypeError("min_date is not a Timestamp or datetime object")
+
 min_date=min_date.date.time()
 max_date=max_date.date.time()
 #membuat widget untuk mengambil input data dari pengguna
