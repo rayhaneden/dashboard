@@ -64,8 +64,8 @@ all_df = pd.read_csv("all_data.csv")
 min_date = all_df["order_purchase_timestamp"].min()
 max_date = all_df["order_purchase_timestamp"].max()
 
-min_date.date()
-max_date.date()
+min_date=min_date.date()
+max_date=max_date.date()
 #membuat widget untuk mengambil input data dari pengguna
 with st.sidebar:
     
