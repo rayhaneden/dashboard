@@ -68,10 +68,6 @@ min_date = all_df["order_purchase_timestamp"].min()
 max_date = all_df["order_purchase_timestamp"].max()
 
 
-
-
-min_date=min_date.date.time()
-max_date=max_date.date.time()
 #membuat widget untuk mengambil input data dari pengguna
 with st.sidebar:
     
