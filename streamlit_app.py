@@ -63,7 +63,7 @@ all_df = pd.read_csv("all_data.csv")
 #mendefinisikan maksimal dan minimal dari data yang ada
 min_date = all_df["order_purchase_timestamp"].min()
 max_date = all_df["order_purchase_timestamp"].max()
-
+print(type(min_date))
 if isinstance(min_date, pd.Timestamp):
     min_time = min_date.time()
 elif isinstance(min_date, datetime.datetime):
