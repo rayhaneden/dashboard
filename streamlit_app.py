@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import datetime
 from babel.numbers import format_currency
 from matplotlib.patches import Rectangle
 sns.set(style='dark')
@@ -60,8 +61,8 @@ all_df = pd.read_csv("all_data.csv")
 
 
 #mendefinisikan maksimal dan minimal dari data yang ada
-min_date = all_df["order_purchase_timestamp"].min()
-max_date = all_df["order_purchase_timestamp"].max()
+min_date = all_df["order_purchase_timestamp"].min().date()
+max_date = all_df["order_purchase_timestamp"].max().date()
 
 #membuat widget untuk mengambil input data dari pengguna
 with st.sidebar:
