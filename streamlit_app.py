@@ -57,20 +57,18 @@ def create_delay(df):
     return  heatmap_data_state_sorted
 #mengabil data yang akan digunakan 
 all_df = pd.read_csv("all_data.csv")
-
+datetime_columns = ["order_purchase_timestamp"]
+ 
+for column in datetime_columns:
+  all_df[column] = pd.to_datetime(all_df[column])
 
 
 #mendefinisikan maksimal dan minimal dari data yang ada
 min_date = all_df["order_purchase_timestamp"].min()
 max_date = all_df["order_purchase_timestamp"].max()
-print(type(min_date))
-if isinstance(min_date, pd.Timestamp):
-    min_time = min_date.time()
-elif isinstance(min_date, datetime.datetime):
-    min_time = min_date.time()
-else:
-    # Handle other cases or raise an error
-    raise TypeError("min_date is not a Timestamp or datetime object")
+
+
+
 
 min_date=min_date.date.time()
 max_date=max_date.date.time()
