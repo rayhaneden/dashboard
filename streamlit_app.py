@@ -181,7 +181,7 @@ top_5_categories,bottom_5_categories=create_best_category(main_df)
 col7, col8 = st.columns(2)
 with col7:
     st.subheader("Top 5 Kategori Produk")
-    fig1, ax1 = plt.subplots(figsize=(8, 4))
+    fig1, ax1 = plt.subplots(figsize=(8, 6))
     top_5_categories.plot(kind='bar', color='skyblue', ax=ax1)
     ax1.set_title('Top 5 Kategori Produk dengan Total Penjualan Terbesar')
     ax1.set_xlabel('Kategori Produk')
